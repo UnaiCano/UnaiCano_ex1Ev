@@ -67,6 +67,7 @@ public class ActivityLugar extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityLugar.this,ActivityFotos.class);
+                intent.putExtra("lugar",lugar);
                 startActivity(intent);
             }
         });

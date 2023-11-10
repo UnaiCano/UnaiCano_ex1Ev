@@ -25,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ActivityFotos.class);
+
+
+                Lugar lugar = new Lugar();
+                lugar.setTitulo("null");
+                lugar.setPuntuacion(0);
+                lugar.setDescripcion("null");
+                lugar.setNombreFoto("null");
+                intent.putExtra("objeto",lugar);
+
                 startActivity(intent);
             }
         });

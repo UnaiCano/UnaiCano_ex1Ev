@@ -46,21 +46,36 @@ public class ActivityFotos extends AppCompatActivity {
         lugar =  (Lugar) bundle.get("objeto");
 
 
-        Lugar guggen = new Lugar();
-        guggen.setNombreFoto("@drawable/alhondiga");
-        guggen.setTitulo("Guggenheim");
-        guggen.setDescripcion("El Museo Guggenheim Bilbao es un museo de arte contemporáneo diseñado" +
-                " por el arquitecto canadiense Frank O. Gehry " +
-                "y localizado en la villa de Bilbao, España");
-        guggen.setPuntuacion(0);
+            Lugar guggen = new Lugar();
+            guggen.setNombreFoto("@drawable/alhondiga");
+            guggen.setTitulo("Guggenheim");
+            guggen.setDescripcion("El Museo Guggenheim Bilbao es un museo de arte contemporáneo diseñado" +
+                    " por el arquitecto canadiense Frank O. Gehry " +
+                    "y localizado en la villa de Bilbao, España");
+            guggen.setPuntuacion(0);
 
-        Lugar moyua = new Lugar();
-        moyua.setNombreFoto("@drawable/moyua");
-        moyua.setTitulo("Plaza Moyua");
-        moyua.setDescripcion("La plaza Moyua se ubica en el centro de Bilbao, siendo de forma oval y " +
-                "teniendo una" +
-                "fuente situada en el centro");
-        moyua.setPuntuacion(0);
+
+        if(lugar.getTitulo() == "Guggenheim" && lugar.getTitulo()!=null){
+            guggen.setPuntuacion(lugar.getPuntuacion());
+        }
+
+        titulo1.setText(guggen.getTitulo());
+        likes1.setText(String.valueOf(guggen.getPuntuacion()));
+
+            Lugar moyua = new Lugar();
+            moyua.setNombreFoto("@drawable/moyua");
+            moyua.setTitulo("Plaza Moyua");
+            moyua.setDescripcion("La plaza Moyua se ubica en el centro de Bilbao, siendo de forma oval y " +
+                    "teniendo una" +
+                    "fuente situada en el centro");
+            moyua.setPuntuacion(0);
+
+        if(lugar.getTitulo() == "Plaza Moyua" && lugar.getTitulo()!=null) {
+            moyua.setPuntuacion(lugar.getPuntuacion());
+        }
+
+        titulo2.setText(moyua.getTitulo());
+        likes2.setText(String.valueOf(moyua.getPuntuacion()));
 
         Lugar alhondiga = new Lugar();
         alhondiga.setNombreFoto("@drawable/alhondiga");
@@ -68,75 +83,61 @@ public class ActivityFotos extends AppCompatActivity {
         alhondiga.setTitulo("Alhondiga");
         alhondiga.setPuntuacion(0);
 
+        if(lugar.getTitulo() == "Alhondiga" && lugar.getTitulo()!=null) {
+            alhondiga.setPuntuacion(lugar.getPuntuacion());
+        }
+
+        titulo3.setText(alhondiga.getTitulo());
+        likes3.setText(String.valueOf(alhondiga.getPuntuacion()));
+
         Lugar elorrieta = new Lugar();
         elorrieta.setNombreFoto("@drawable/elorrieta");
         elorrieta.setDescripcion("adwadaw");
         elorrieta.setPuntuacion(0);
         elorrieta.setTitulo("Elorrieta Errekamari");
 
-
-        if(lugar.getTitulo().equals(guggen.getTitulo())){
-            guggen = lugar;
-            titulo1.setText(guggen.getTitulo());
-            likes1.setText(String.valueOf(guggen.getPuntuacion()));
+        if(lugar.getTitulo() == "Elorrieta Errekamari" && lugar.getTitulo()!=null) {
+            elorrieta.setPuntuacion(lugar.getPuntuacion());
         }
 
-        if(lugar.getTitulo().equals(moyua.getTitulo())) {
-            moyua = lugar;
-            titulo2.setText(moyua.getTitulo());
-            likes2.setText(String.valueOf(moyua.getPuntuacion()));
-        }
-
-        if(lugar.getTitulo().equals(alhondiga.getTitulo())) {
-            alhondiga = lugar;
-            titulo3.setText(alhondiga.getTitulo());
-            likes3.setText(String.valueOf(alhondiga.getPuntuacion()));
-        }
-
-        if(lugar.getTitulo().equals(elorrieta.getTitulo())) {
-            elorrieta = lugar;
-            titulo4.setText(elorrieta.getTitulo());
-            likes4.setText(String.valueOf(elorrieta.getPuntuacion()));
-        }
-
-
-
+        titulo4.setText(guggen.getTitulo());
+        likes4.setText(String.valueOf(elorrieta.getPuntuacion()));
 
         foto1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityFotos.this, ActivityLugar.class);
-                intent.putExtra("objeto", finalGuggen);
+                intent.putExtra("objeto", guggen);
                 startActivity(intent);
             }
         });
 
-        Lugar finalMoyua = moyua;
+
         foto2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityFotos.this, ActivityLugar.class);
-                intent.putExtra("objeto", finalMoyua);
+                intent.putExtra("objeto", moyua);
                 startActivity(intent);
             }
         });
 
-        Lugar finalAlhondiga = alhondiga;
+
         foto3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityFotos.this, ActivityLugar.class);
-                intent.putExtra("objeto", finalAlhondiga);
+                intent.putExtra("objeto", alhondiga);
                 startActivity(intent);
             }
         });
 
-        Lugar finalElorrieta = elorrieta;
+
         foto4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityFotos.this, ActivityLugar.class);
-                intent.putExtra("objeto", finalElorrieta);
+                intent.putExtra("objeto", elorrieta);
                 startActivity(intent);
             }
         });
