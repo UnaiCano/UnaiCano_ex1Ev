@@ -24,7 +24,6 @@ public class ActivityFotos extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-
         titulo1 = findViewById(R.id.titulo_foto_top_left);
         likes1 = findViewById(R.id.likes_top_left);
         foto1 = findViewById(R.id.ImagenTopLeft);
@@ -52,11 +51,13 @@ public class ActivityFotos extends AppCompatActivity {
             guggen.setDescripcion("El Museo Guggenheim Bilbao es un museo de arte contemporáneo diseñado" +
                     " por el arquitecto canadiense Frank O. Gehry " +
                     "y localizado en la villa de Bilbao, España");
-            guggen.setPuntuacion(0);
+
 
 
         if(lugar.getTitulo() == "Guggenheim" && lugar.getTitulo()!=null){
             guggen.setPuntuacion(lugar.getPuntuacion());
+        } else {
+            guggen.setPuntuacion(0);
         }
 
         titulo1.setText(guggen.getTitulo());
@@ -68,10 +69,12 @@ public class ActivityFotos extends AppCompatActivity {
             moyua.setDescripcion("La plaza Moyua se ubica en el centro de Bilbao, siendo de forma oval y " +
                     "teniendo una" +
                     "fuente situada en el centro");
-            moyua.setPuntuacion(0);
+
 
         if(lugar.getTitulo() == "Plaza Moyua" && lugar.getTitulo()!=null) {
             moyua.setPuntuacion(lugar.getPuntuacion());
+        }  else{
+            moyua.setPuntuacion(0);
         }
 
         titulo2.setText(moyua.getTitulo());
@@ -81,10 +84,12 @@ public class ActivityFotos extends AppCompatActivity {
         alhondiga.setNombreFoto("@drawable/alhondiga");
         alhondiga.setDescripcion("adawudgaw");
         alhondiga.setTitulo("Alhondiga");
-        alhondiga.setPuntuacion(0);
+
 
         if(lugar.getTitulo() == "Alhondiga" && lugar.getTitulo()!=null) {
             alhondiga.setPuntuacion(lugar.getPuntuacion());
+        } else {
+            alhondiga.setPuntuacion(0);
         }
 
         titulo3.setText(alhondiga.getTitulo());
@@ -93,11 +98,12 @@ public class ActivityFotos extends AppCompatActivity {
         Lugar elorrieta = new Lugar();
         elorrieta.setNombreFoto("@drawable/elorrieta");
         elorrieta.setDescripcion("adwadaw");
-        elorrieta.setPuntuacion(0);
         elorrieta.setTitulo("Elorrieta Errekamari");
 
         if(lugar.getTitulo() == "Elorrieta Errekamari" && lugar.getTitulo()!=null) {
             elorrieta.setPuntuacion(lugar.getPuntuacion());
+        } else {
+            elorrieta.setPuntuacion(0);
         }
 
         titulo4.setText(guggen.getTitulo());

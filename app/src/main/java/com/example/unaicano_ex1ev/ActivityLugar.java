@@ -67,7 +67,7 @@ public class ActivityLugar extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityLugar.this,ActivityFotos.class);
-                intent.putExtra("lugar",lugar);
+                intent.putExtra("objeto",lugar);
                 startActivity(intent);
             }
         });
@@ -76,11 +76,11 @@ public class ActivityLugar extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityLugar.this,ActivityFotos.class);
-                lugar.setPuntuacion(lugar.getPuntuacion()+1);
-                intent.putExtra("lugar",lugar);
+                int contador = lugar.getPuntuacion()+1;
+                lugar.setPuntuacion(contador);
+                intent.putExtra("objeto",lugar);
                 startActivity(intent);
             }
         });
     }
-
 }
